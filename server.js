@@ -77,7 +77,10 @@ app.get('/', function (req, res) {
   }
 });
 
-app.use('/config', express.static('public/config.json'));
+app.get('/config', function (req, res){
+    console.log('Serving config.json');
+    res.render('config.json');
+});
 
 app.get('/pagecount', function (req, res) {
   // try to initialize the db on every request if it's not already
