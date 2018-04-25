@@ -77,9 +77,8 @@ app.get('/', function (req, res) {
   }
 });
 
-app.get('/config', function (req, res){
+app.use('/config', express.static('static/config.json'){
     console.log('Serving config.json');
-    res.render('config.json');
 });
 
 app.get('/pagecount', function (req, res) {
